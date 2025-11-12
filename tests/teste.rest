@@ -1,0 +1,69 @@
+### REGISTRO
+POST http://127.0.0.1:8000/auth/register
+Content-Type: application/json
+
+{
+  "email": "teste2@teste.com",
+  "password": "123456"
+}
+
+
+
+### LOGIN
+POST http://127.0.0.1:8000/auth/login
+Content-Type: application/json
+
+{
+  "email": "teste2@teste.com",
+  "password": "123456"
+}
+
+### GET MINHAS CONTAS
+GET http://127.0.0.1:8000/accounts/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNDUxODAsInN1YiI6IjQifQ.M-3Myy8QmVrs2dFZLVSUKziK5TEzgwy2Y6YzxvzVc5g 
+
+
+### CRIAR CONTA
+POST http://127.0.0.1:8000/accounts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNDUxODAsInN1YiI6IjQifQ.M-3Myy8QmVrs2dFZLVSUKziK5TEzgwy2Y6YzxvzVc5g 
+
+{
+  "currency": "BRL",
+  "initial_deposit": 120.00
+}
+
+
+
+### CRIAR TRANSAÇÃO
+POST http://127.0.0.1:8000/transactions/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNTA2NDYsInN1YiI6IjQifQ.Tlr-QOfa0qtDdtcQhzbcQ4Fs7C--r6m2-Qf4yY7axbc
+
+{
+  "amount": 50.00,
+  "type": "credit",
+  "description": "Depósito de teste"
+}
+
+
+### LISTAR TRANSAÇÕES
+GET http://127.0.0.1:8000/transactions/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNDUxODAsInN1YiI6IjQifQ.M-3Myy8QmVrs2dFZLVSUKziK5TEzgwy2Y6YzxvzVc5g
+
+
+###REALIZAR TRANSFERÊNCIA DE USER1  USER2
+POST http://127.0.0.1:8000/transfers/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNDUxODAsInN1YiI6IjQifQ.M-3Myy8QmVrs2dFZLVSUKziK5TEzgwy2Y6YzxvzVc5g
+Content-Type: application/json
+
+{
+  "to_account_id": 2,
+  "amount": 50.00,
+  "description": "Transferência para amigo"
+}
+
+
+### 1LISTAR TODAS AS TRANSFERÊNCIAS DO USER1
+GET http://127.0.0.1:8000/transfers/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMwNDUxODAsInN1YiI6IjQifQ.M-3Myy8QmVrs2dFZLVSUKziK5TEzgwy2Y6YzxvzVc5g

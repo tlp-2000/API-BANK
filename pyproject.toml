@@ -1,0 +1,27 @@
+[project]
+name = "bank-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "tlp-2000",email = "thiagoluciano114@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi (>=0.121.0,<0.122.0)",
+    "uvicorn[standard] (>=0.38.0,<0.39.0)",
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "aiosqlite (>=0.21.0,<0.22.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "python-jose[cryptography] (>=3.5.0,<4.0.0)",
+    "pydantic (>=2.12.3,<3.0.0)",
+    "email-validator (>=2.3.0,<3.0.0)",
+    "pydantic-settings (>=2.11.0,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "bank_api", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
